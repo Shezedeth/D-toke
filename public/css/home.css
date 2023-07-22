@@ -1,0 +1,378 @@
+/* -------------||||| MAIN |||||--------------- */
+.home__main-cajaBanner {
+    display: flex;
+    width: 100vw;
+    height: 162px;
+    flex-direction: row;
+    justify-content: center;
+    margin: 40px 0px 14px 0px;
+    flex-wrap: nowrap;
+}
+    .home__main-cajaBanner2 {
+        display: flex;
+        margin: 10px;
+        width: 90%;
+        background-color: var(--colorBanner);
+        border-radius: 16px;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+        .home__main-cajaImg {
+            display: flex;
+            order: 1;
+            width: 45%;
+            align-items: center;
+            flex-direction: row;
+        }
+        .home__main-cajaImg img {
+            width: 120%;
+            margin: 40px 0px 0px -13px;
+        }
+    .home__main-cajaTxt {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 55%;
+        align-items: flex-start;
+        padding-left: 4%;
+    }
+        .home__main__cajaTxt-justdoit {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 0px;
+        }
+            .home__main__cajaTxt-justdoit p {
+                display: flex;
+                color: #949393;
+                font-size: 1rem;
+                
+            }
+            .home__main__cajaTxt-whitnike {
+                display: flex;
+                color: #949393;
+                font-size: 1rem;
+                 
+            }
+                .nike {
+                    font-size: 1rem;
+                    color: #ffffff;
+                    padding-left: 10px;
+                }
+        .home__main__cajaTxt-explore {
+            display: flex;
+            padding-left: 0px;
+        }
+        .home__main__cajaTxt-explore a{
+            display: flex;
+            font-family: 'Montserrat';
+            color: #ffffff;
+            padding-top: 10px;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+        .home__main__cajaTxt-explore i{
+            padding-left: 5px;
+        }
+        
+.home__main__seeMore {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+    .home__main__seeMore-title {
+        display: flex;
+    }
+    .home__main__seeMore-title h2{
+        display: flex;
+        font-size: 1.3rem;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .home__main__seeMore-link {
+        display: flex;
+    }
+    .home__main__seeMore-link a {
+        color: #949393;
+        font-size: 1rem;
+    }
+    /* POPULAR SECTION */
+    
+    .home__main-Popular {
+        display: flex;
+        width: 100vw;
+        height: 159px;
+        flex-direction: row;
+        justify-content: center;
+        margin: 20px 0px 14px 0px;
+    }
+        .home__main-cajaPopular {
+            display: flex;
+            margin: 10px;
+            width: 90%;
+            background-color: var(--colorPopular);
+            border-radius: 16px;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+    .home__main__popular-cajaImg {
+        display: flex;
+        order: 1;
+        width: 40%;
+        align-items: center;
+        flex-direction: row;
+    }
+    .home__main__popular-cajaImg img {
+        width: 120%;
+        margin: 40px 0px 0px -13px;
+    }
+    .home__main__popular-cajaTxt {
+        display: flex;
+        flex-direction: column;
+        color: #000000;
+        width: 50%;
+        justify-content: space-around;
+    }
+    .home__main__popular-cajaTxt-title {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        margin: 0px 0px 0px 39px;
+    }
+    .home__main__popular-cajaTxt-nike {
+        display: flex;
+        font-weight: 600;
+        font-size: 1.2rem;
+        
+    }
+    .home__main__popular-cajaTxt-model {
+        display: flex;
+        color: #949393;
+        font-weight: 600;
+        font-size: 1.2rem;
+        
+    }
+    .home__main__popular-cajaTxt-price {
+        display: flex;
+        font-size: 1.3rem;
+        font-weight: 600;
+        padding-top: 12px;
+    }
+    
+    /* ||||||||||| products section |||||||||| */
+    
+    .home__main__section-cards {
+        display: flex;
+        flex-direction: row;
+        margin: 30px 0px 43px 0px;
+    }
+        .home__main__section__cards-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+            .home__main__section__cards-product {
+                display: flex;
+                width: 44%;
+                flex-direction: column;
+                align-items: center;
+                margin: 17px 9px;
+            }
+                .home__main__section__cards-img {
+                    display: flex;
+                    position: relative;
+                    background-color: var(--colorPopular);
+                    border-radius: 16px;
+                    flex-direction: column;
+                    align-items: center;
+                    height: 140px;
+                    width: 100%;
+                    margin-bottom: 15px;
+                }
+                .home__main__section__cards-img a {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                }
+                .home__main__section__cards-img img {
+                    width: 100%;
+                    margin: 24px 0px 13px 0px;
+                }
+                
+            .home__main__section__cards-text {
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                flex-wrap: wrap;
+            }
+            .home__main__section__cards-description {
+                font-weight: 400;
+                font-size: 0.6rem;
+            }
+            .home__main__section__cards-price {
+                font-weight: 600;
+            }
+            .home__main__section__card-product-heart {
+            position: absolute;
+            text-align: end;
+            width: 95%;
+            }
+            .home__main__section__card-product-heart i{
+                font-size: 1.6rem;
+                color: #949393;
+                padding: 6px;
+            }
+            .home__main__section__card-product-heart i:hover {
+                color: var(--colorBanner);
+            }
+
+        .tablet {
+            display: none;
+        }
+        .home__main__section__tabletBanner {
+            display: none;
+        }
+
+
+        @media (min-width: 481px) {
+
+        }
+        @media (min-width: 600px) {
+        
+            .mobile-Banners {
+                display: none;
+            }
+
+        
+            .home__main__section__tabletBanner {
+                display: block;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                /* border: solid 5px red; */
+            }
+            .home__main__section__tabletBanner-container {
+                display: flex;
+                /* border: solid 5px rgb(85, 255, 0); */
+            }
+            .home__main__section__tabletBanner-container-box {
+                display: flex;
+                /* border: solid 5px rgb(0, 145, 255); */
+            }
+            .home__main__section__tabletBanner-container-box-title {
+                display: flex;
+                width: 35%;
+                /* border: solid 5px rgb(144, 0, 255); */
+                flex-direction: column;
+                padding: 0px 0px 0px 15px;
+                justify-content: center;
+            }
+            .title-Banner {
+                font-size: 2rem;
+                font-family: 'Montserrat';
+                padding-top: 10px;
+            }
+            .air {
+                color: var(--colorBanner);
+            }
+            .buy-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                padding-top: 15px;
+            }
+            .buy-container-violeta {
+                display: flex;
+                background-color: var(--colorBanner);
+                border-radius: 15px;
+                width: 80%;
+                flex-direction: column;
+                text-align: center;
+                height: 34px;
+                justify-content: center;
+                align-items: center;
+            }
+            .buy-container-violeta a{
+                color: #ffffff;
+                width: 80%;
+                font-family: 'Montserrat';
+                font-size: 0.6rem;
+            }
+            
+            
+            .home__main__section__tabletBanner-container-box-title p {
+                font-size: 0.5rem;
+                font-family: 'Montserrat';
+            }
+            .home__main__section__tabletBanner-container-box-img {
+                display: flex;
+                width: 65%;
+                /* border: solid 5px rgb(255, 0, 200); */
+            }
+            .box-imgBig {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            }
+            .box-imgBig img {
+                width: 100%;
+            }
+            .home__main__section__tabletBanner-container-box-img-rigth {
+                display: flex;
+                /* border: solid 5px rgb(0, 238, 255); */
+                flex-direction: column;
+                justify-content: center;
+                padding: 0px;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            .home__main__section__tabletBanner-container-box-img-rigth div {
+                border: solid 1px grey;
+                border-radius: 50%;
+                margin: 5px;
+            }
+            .home__main__section__tabletBanner-container-box-img-rigth div a img {
+                width: 100%;
+            }
+            .home__main__section__tabletBanner-container-box-img-rigth div a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            
+            
+            
+            
+            
+            .tablet {
+                display: block;
+            }
+            .home__main__section__cards-product {
+                display: flex;
+                width: 30%;
+            }
+            .home__main__section__card-product-heart i{
+                font-size: 1.2rem;
+            }
+        
+        }
+        @media (min-width: 744px) {
+            .home__main__section__cards-product {
+                display: flex;
+                width: 13%;
+            }
+        }
+        @media (min-width: 1180px) {
+        }
+        
+        
+        
