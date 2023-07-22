@@ -271,15 +271,22 @@
                 width: 35%;
                 /* border: solid 5px rgb(144, 0, 255); */
                 flex-direction: column;
-                padding: 0px 0px 0px 15px;
+                padding: 0px 0px 0px 32px;
                 justify-content: center;
             }
             .title-Banner {
+                display: flex;
                 font-size: 2rem;
                 font-family: 'Montserrat';
                 padding-top: 10px;
+                flex-direction: row;
+                flex-wrap: wrap;
             }
-            .air {
+            .home__main__section__tabletBanner-container-box-title-span-nike {
+                width: 40%;
+            }
+            .home__main__section__tabletBanner-container-box-title-span-air {
+                width: 60%;
                 color: var(--colorBanner);
             }
             .buy-container {
