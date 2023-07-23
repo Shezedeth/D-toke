@@ -251,7 +251,9 @@ body.home {
         .home__main__section__tabletBanner {
             display: none;
         }
-
+        .home__main__section__bottom {
+            display: none;
+        }
 
         @media (min-width: 481px) {
 
@@ -382,6 +384,69 @@ body.home {
             }
             .home__main__section__card-product-heart i{
                 font-size: 1.2rem;
+            }
+            .home__main__add-title h2{
+                font-size: 1rem;
+                padding-left: 5%;
+            }
+            .home__main__section__bottom {
+                display: block;
+                display: flex;
+                align-items: stretch;
+                /* height: 200px; */
+                padding: 0px 20px;
+                flex-direction: row;
+            }
+            .home__main__section__bottom__box-img {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-content: space-around;
+            }
+            .home__main__section__bottom__box-img img{
+                width: 100%;
+                /* height: 100%; */
+            }
+            .home__main__section__bottom__box-register {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .home__main__section__bottom__box-register h3{
+                padding: 12px 0px;
+            }
+            .home__main__section__bottom__box-register p{
+                padding: 10px 0px 6px 0px;
+                font-size: 0.8rem;
+            }
+            .home__main__section__bottom__box-input {
+                position: relative;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                padding: 5%;
+                width: 100%;
+            }
+            .home__main__section__bottom__box-input input{
+                border: none;
+                width: 100%;
+                background-color: rgb(195, 195, 195);
+                border-radius: 10px;
+                font-size: 1rem;
+                height: 30px;
+            }
+            .home__main__section__bottom__box-input-i {
+                position: absolute;
+            }
+            .home__main__section__bottom__box-input-i i{
+                border: none;
+                background-color: rgb(195, 195, 195);
+                border-radius: 10px;
+                font-size: 1rem;
+                
             }
         
         }
