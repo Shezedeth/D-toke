@@ -10,7 +10,11 @@
 }
 .conten-login {
   height: 100%;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.profile__conten-login{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -123,7 +127,6 @@
 .login .login__sesion h3,
 a {
   font-size: var(--font-paragraph-mobile);
-  margin-bottom: 0px;
 }
 .login .login__sesion a {
   color: #3506cd;
@@ -148,6 +151,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 35px 20px 90px 20px;
   }
   .login {
     display: none;
@@ -192,8 +196,8 @@ a {
   }
   .logintableAndDesktop__input-checkbox-input {
     display: flex;
-    align-items: center;
-    gap: 2px;
+    /* align-items: center; */
+    gap: 5px;
   }
 
   .logintableAndDesktop__input-item label {
@@ -227,9 +231,11 @@ a {
     color: #ffff;
     padding: 10px 0;
     border-radius: 5px;
-    margin: 7% 0;
     border: none;
+    margin: 7% 0;
+    transition: all .3s ease;
   }
+  
   .login__tableAndDesktop-contain-2 {
     width: 50%;
     height: 100%;
@@ -251,7 +257,7 @@ a {
 }
 @media (min-width: 1024px) {
   .login__tableAndDesktop {
-    max-height: 550px;
+    max-height: 650px;
   }
   .login__tableAndDesktop h2 {
     font-size: var(--font-subtitle-desktop);

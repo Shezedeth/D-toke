@@ -1,0 +1,160 @@
+'use strict';
+
+/** @type {import('sequelize-cli').Migration} */
+module.exports = {
+  async up(queryInterface, Sequelize) {
+
+    await queryInterface.bulkInsert('Products', [
+    {
+      model: "Superstar",
+      description: "Zapatillas Adidas clásicas con el icónico diseño de las tres rayas.",
+      image: "Adidas_Superstar.jpeg",
+      category_id: 2,
+      price: 59000,
+      createdAt : new Date,
+      updatedAt : new Date,
+    },
+    {
+      model: "Cali",
+      description: "Zapatillas Puma con estilo vintage y suela gruesa.",
+      image: "Puma_Cali.webp",
+      category_id: 3,
+      price: 39000,
+      createdAt : new Date,
+      updatedAt : new Date,
+    },
+    {
+      model: "Air Zoom",
+      description: "Zapatillas Nike ligeras con tecnología Air Zoom para una mayor respuesta en la pisada.",
+      image: "Nike_Air-Zoom.jpg",
+      category_id: 1,
+      price: 69000,
+      createdAt : new Date,
+      updatedAt : new Date,
+    },
+    {
+      model: "Classic Leather",
+      description: "Zapatillas Reebok de cuero clásicas con diseño retro.",
+      image: "Reebok_Classic-Leather.jpg",
+      category_id: 4,
+      price: 59000,
+      createdAt : new Date,
+      updatedAt : new Date,
+    },
+    {
+      model: "Air Max 97",
+      description: "Zapatillas Nike deportivas con tecnología de amortiguación Air Max.",
+      image: "Nike_AirMax_97.jpg",
+      category_id: 1,
+      price: 70000,
+      createdAt : new Date,
+      updatedAt : new Date,
+    },
+    {
+      model: "React Infinity Run",
+      description: "Zapatillas Nike de running con amortiguación React para una experiencia suave.",
+      image: "Nike_React-Infinity-Run.jpeg",
+      category_id: 1,
+      price: 72000,
+      createdAt : new Date,
+      updatedAt : new Date,
+    },
+    {
+      model: "Joyride Run",
+      description: "Zapatillas Nike con sistema de amortiguación Joyride para una pisada suave y cómoda.",
+      image: "Nike_Joyride-Run.png",
+      category_id: 1,
+      price: 72000,
+      createdAt : new Date,
+      updatedAt : new Date,
+    },
+    {
+      model: "Ultraboost",
+      description: "Zapatillas Adidas de running con tecnología Ultraboost para mayor comodidad y retorno de energía.",
+      image: "Adidas_Ultraboost.jpg",
+      category_id: 2,
+      price: 68000,
+      createdAt : new Date,
+      updatedAt : new Date,
+    },
+    {
+      model: "Stan Smith",
+      description: "Zapatillas Adidas de estilo retro con diseño icónico y suela de goma.",
+      image: "Adidas_Stan-Smith.webp",
+      category_id: 2,
+      price: 66000,
+      createdAt : new Date,
+      updatedAt : new Date,
+    },
+    {
+      model: "Gazelle",
+      description: "Zapatillas Adidas clásicas de ante con detalles en contraste.",
+      image: "Adidas_Gazelle.jpg",
+      category_id: 2,
+      price: 75000,
+      createdAt : new Date,
+      updatedAt : new Date,
+    },
+    {
+      model: "Nano X",
+      description: "Zapatillas Reebok de entrenamiento versátiles y resistentes para cualquier actividad.",
+      image: "Reebok_Nano-X.jpg",
+      category_id: 4,
+      price: 71000,
+      createdAt : new Date,
+      updatedAt : new Date,
+    },
+    {
+      model: "Club C",
+      description: "Zapatillas Reebok de estilo clásico con diseño limpio y detalles en contraste.",
+      image: "Reebok_Club-C.jpg",
+      category_id: 4,
+      price: 68000,
+      createdAt : new Date,
+      updatedAt : new Date,
+    },
+    {
+      model: "Flexagon",
+      description: "Zapatillas Reebok versátiles ideales para entrenamiento con un diseño ligero y cómodo.",
+      image: "Reebok_Flexagon.jpg",
+      category_id: 4,
+      price: 76000,
+      createdAt : new Date,
+      updatedAt : new Date,
+    },
+    {
+      model: "RS-X",
+      description: "Zapatillas Puma de estilo retro con tecnología de amortiguación RS.",
+      image: "Puma_RS-X.webp",
+      category_id: 3,
+      price: 71000,
+      createdAt : new Date,
+      updatedAt : new Date,
+    },
+    {
+      model: "Future Rider",
+      description: "Zapatillas Puma inspiradas en los estilos de los años 80 con un toque moderno.",
+      image: "Puma_Future-Rider.webp",
+      category_id: 3,
+      price: 70000,
+      createdAt : new Date,
+      updatedAt : new Date,
+    },
+    {
+      model: "RS-2K",
+      description: "Zapatillas Puma con diseño futurista y detalles audaces.",
+      image: "Puma_RS-2K.jpg",
+      category_id: 3,
+      price: 74000,
+      createdAt : new Date,
+      updatedAt : new Date,
+    },
+
+  ], {});
+  },
+
+  async down(queryInterface, Sequelize) {
+
+    await queryInterface.bulkDelete('Products', null, {});
+  }
+};

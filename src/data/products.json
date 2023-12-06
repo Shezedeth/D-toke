@@ -10,7 +10,7 @@
          "Negro",
          "Blanco"
       ],
-      "price": 150,
+      "price": 56000,
       "tallas": [
          "US 7",
          "US 8",
@@ -28,7 +28,7 @@
          "Gris",
          "Negro"
       ],
-      "price": 130,
+      "price": 45000,
       "tallas": [
          "US 8",
          "US 9",
@@ -46,12 +46,13 @@
          "Azul",
          "Verde"
       ],
-      "price": 140,
+      "price": 50000,
       "tallas": [
          "US 8",
          "US 9",
          "US 10"
-      ]
+      ],
+      "gender": "Nike"
    },
    {
       "id": 4,
@@ -64,7 +65,7 @@
          "Gris",
          "Rojo"
       ],
-      "price": 160,
+      "price": 48000,
       "tallas": [
          "US 7",
          "US 8",
@@ -75,14 +76,14 @@
       "id": 5,
       "name": "Ultraboost",
       "description": "Zapatillas de running con tecnología Ultraboost para mayor comodidad y retorno de energía.",
-      "image": "Adidas_Ultraboost.webp",
+      "image": "Adidas_Ultraboost.jpg",
       "category": "Adidas",
       "colors": [
          "Blanco",
          "Negro",
          "Verde"
       ],
-      "price": 160,
+      "price": 43000,
       "tallas": [
          "US 8",
          "US 9",
@@ -100,7 +101,7 @@
          "Negro",
          "Azul"
       ],
-      "price": 100,
+      "price": 47000,
       "tallas": [
          "US 7",
          "US 8",
@@ -118,7 +119,7 @@
          "Verde",
          "Azul"
       ],
-      "price": 110,
+      "price": 40000,
       "tallas": [
          "US 6",
          "US 7",
@@ -136,12 +137,13 @@
          "Gris",
          "Rojo"
       ],
-      "price": 90,
+      "price": 44000,
       "tallas": [
          "US 8",
          "US 9",
          "US 10"
-      ]
+      ],
+      "gender": "Adidas"
    },
    {
       "id": 9,
@@ -154,7 +156,7 @@
          "Azul",
          "Gris"
       ],
-      "price": 90,
+      "price": 46000,
       "tallas": [
          "US 6",
          "US 7",
@@ -172,7 +174,7 @@
          "Gris",
          "Rojo"
       ],
-      "price": 110,
+      "price": 55000,
       "tallas": [
          "US 8",
          "US 9",
@@ -190,7 +192,7 @@
          "Negro",
          "Verde"
       ],
-      "price": 95,
+      "price": 53000,
       "tallas": [
          "US 7",
          "US 8",
@@ -208,7 +210,7 @@
          "Azul",
          "Gris"
       ],
-      "price": 75,
+      "price": 49000,
       "tallas": [
          "US 7",
          "US 8",
@@ -226,7 +228,7 @@
          "Rojo",
          "Blanco"
       ],
-      "price": 120,
+      "price": 42000,
       "tallas": [
          "US 7",
          "US 8",
@@ -244,7 +246,7 @@
          "Negro",
          "Blanco"
       ],
-      "price": 95,
+      "price": 43000,
       "tallas": [
          "US 8",
          "US 9",
@@ -262,7 +264,7 @@
          "Rosa",
          "Negro"
       ],
-      "price": 85,
+      "price": 40000,
       "tallas": [
          "US 7",
          "US 8",
@@ -280,7 +282,7 @@
          "Verde",
          "Gris"
       ],
-      "price": 110,
+      "price": 47000,
       "tallas": [
          "US 8",
          "US 9",
@@ -289,12 +291,39 @@
    },
    {
       "id": 17,
-      "name": "zazaazazaza",
-      "description": "123123123",
-      "image": "1693073367635_products_.jpeg",
+      "name": "360",
+      "description": "coral",
+      "image": "1693316851877_products_.jpg",
       "category": "Nike",
       "colors": null,
-      "price": 123123123,
-      "tallas": "38"
+      "price": 48000
+   },
+   {
+      "id": 18,
+      "name": "vapormax negra pipa dorada",
+      "description": "negra pipa dorada",
+      "image": "1693323639833_products_.jpg",
+      "category": "Nike",
+      "colors": null,
+      "price": 47000,
+      "gender": "Nike"
+   },
+   {
+      "id": 19,
+      "name": "",
+      "description": "",
+      "image": null,
+      "category": "Nike",
+      "colors": null,
+      "price": 0
+   },
+   {
+      "id": 20,
+      "name": "",
+      "description": "",
+      "image": null,
+      "category": "Nike",
+      "colors": null,
+      "price": 0
    }
 ]

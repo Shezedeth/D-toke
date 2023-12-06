@@ -1,9 +1,15 @@
+.image-detail {
+  width:310px;
+  height: 350px;
+  background-color: #fff;
+}
+
 .editProduct__container-product {
     height: 100vh;
     background-color: #111421;
   }
   .editProduct__container-product-content {
-    height: 100%;
+    /* height: 100%; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -38,6 +44,7 @@
     flex-direction: column;
     width: 100%;
   }
+  
   
   .editProduct__form-group__label {
     display: block;

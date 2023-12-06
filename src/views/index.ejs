@@ -1,614 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('partials/head', {title: 'Home'}) %>
+<%- include('partials/head', {title: 'Home' }) %>
 
-<body class="home">
-    <div class="home-box">
-        
-        <%- include('partials/header') %>
+    <body class="home">
+        <div class="loading__page show__page">
+            <div class="spin__page"></div>
+        </div>
+        <div class="home-box">
 
-    </div>
-    <main class="home__main">
-        <section class="home__main__section__desktopage">
+            <%- include('partials/header') %>
 
-            <div class="desktopage__carouselBox">
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel">
-                        <div class="carousel-item active home__main__carousel-img1">
+        </div>
+        <main class="home__main">
+
+            <!-- DESKTOP VIEW -->
+            <section class="home__main__section__desktopage">
+                <div class="desktopage__carouselBox">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="desktopage__carouselBox__title">
+                            <div class="desktopage__carouselBox__title__container animate__animated animate__bounce">
+                                <h4 class="animate__pulse">
+                                    Style
+                                </h4>
+                                <h4>
+                                    in
+                                </h4>
+                                <h4>
+                                    Motion
+                                </h4>
+                            </div>
+
+                            <p>
+                                Hasta 20% OFF
+                            </p>
+                            <div class="buy-container">
+                                <div class="buy-container-violeta">
+                                    <a href="/products/productsList">Ver más</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="carousel-item home__main__carousel-img2">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
                         </div>
-                        <div class="carousel-item home__main__carousel-img3">
-                        </div>
-                    </div>
-                </div>
-            </div>
-                <div class="desktopage__carouselBox__title">
-                    <div class="desktopage__carouselBox__title__container">
-                        <h4>
-                            Style
-                        </h4>
-                        <h4>
-                            in
-                        </h4>
-                        <h4>
-                            Motion
-                        </h4>
-                    </div>
-
-                    <p>
-                        Hasta 20% OFF
-                    </p>
-                    <div class="buy-container">
-                        <div class="buy-container-violeta">
-                            <a href="/products/detail">Ver más</a>
+                        <div class="carousel-inner">
+                        
+                            <div class="carousel-item active home__main__carousel-img1">
+                            </div>
+                            <div class="carousel-item home__main__carousel-img2">
+                            </div>
+                            <div class="carousel-item home__main__carousel-img3">
+                            </div>
                         </div>
                     </div>
                 </div>
-
-            </div>
-            <div class="home__main__section__desktopage-marcas-box">
-                <div class="home__main__section__desktopage-marcasContainer">
-                    <div class="home__main__section__desktopage-marcas-img1">
-                        <a href="">
-                            <img src="/img/home-main/Marca-transparente-.png" alt="">
-                        </a>
-                    </div>
-                    <div class="home__main__section__desktopage-marcas-img2">
-                        <a href="">
-                            <img src="/img/home-main/Marca-transparente-.png" alt="">
-                        </a>
-                    </div>
-                    <div class="home__main__section__desktopage-marcas-img3">
-                        <a href="">
-                            <img src="/img/home-main/Marca-transparente-.png" alt="">
-                        </a>
-                    </div>
-                    <div class="home__main__section__desktopage-marcas-img4">
-                        <a href="">
-                            <img src="/img/home-main/Marca-transparente-.png" alt="">
-                        </a>
-                    </div>
-                    <div class="home__main__section__desktopage-marcas-img5">
-                        <a href="">
-                            <img src="/img/home-main/Marca-transparente-.png" alt="">
-                        </a>
-                    </div>
                 </div>
-            </div>
+                <div class="home__main__section__desktopage-marcas-box">
+                    <div class="home__main__section__desktopage-marcasContainer">
+                        <% categories.forEach(category=> { %>
+                            <div class="home__main__section__desktopage-marcas-img">
+                                <a href="#<%= category.image %>">
+                                    <img src="/img/home-main/<%= category.image %>" alt="">
+                                </a>
+                            </div>
+                            <% }) %>
 
-            <div class="home__main__section__desktop__mnh-box">
-                <div class="home__main__section__desktop__mnh-container">
-                    <div class="home__main__section__desktop__mnh-container-div1">
-                        <a href="#" class="home__main__section__desktop__mnh-container-link">
-                            <span class="home__main__section__desktop__mnh-container-txt1">
-                                Mujeres
-                            </span>
-                            <span class="home__main__section__desktop__mnh-container-txt2">
-                                Nueva colección
-                            </span>
-                        </a>
-
-                    </div>
-                    <div class="home__main__section__desktop__mnh-container-div2">
-                        <a href="#" class="home__main__section__desktop__mnh-container-link">
-                            <span class="home__main__section__desktop__mnh-container-txt1">
-                                Niños
-                            </span>
-                            <span class="home__main__section__desktop__mnh-container-txt2">
-                                Nueva colección
-                            </span>
-                        </a>
-                    </div>
-                    <div class="home__main__section__desktop__mnh-container-div3">
-                        <a href="#" class="home__main__section__desktop__mnh-container-link">
-                            <span class="home__main__section__desktop__mnh-container-txt1">
-                                Hombres
-                            </span>
-                            <span class="home__main__section__desktop__mnh-container-txt2">
-                                Nueva colección
-                            </span>
-                        </a>
 
                     </div>
                 </div>
-            </div>
 
+                <div class="home__main__section__desktop__mnh-box">
+                    <div class="home__main__section__desktop__mnh-container">
+                        <div class="home__main__section__desktop__mnh-container-div1">
+                            <a href="#" class="home__main__section__desktop__mnh-container-link">
+                                <span class="home__main__section__desktop__mnh-container-txt1">
+                                    Mujeres
+                                </span>
+                                <span class="home__main__section__desktop__mnh-container-txt2">
+                                    Nueva colección
+                                </span>
+                            </a>
 
-            <div class="home__main__special-offers">
-                <div class="home__main__special-offers-button">
-                    <a href="/productDetail">No te pierdas las ofertas especiales que hay cada fin de semana!!!</a>
+                        </div>
+                        <div class="home__main__section__desktop__mnh-container-div2">
+                            <a href="#" class="home__main__section__desktop__mnh-container-link">
+                                <span class="home__main__section__desktop__mnh-container-txt1">
+                                    Niños
+                                </span>
+                                <span class="home__main__section__desktop__mnh-container-txt2">
+                                    Nueva colección
+                                </span>
+                            </a>
+                        </div>
+                        <div class="home__main__section__desktop__mnh-container-div3">
+                            <a href="#" class="home__main__section__desktop__mnh-container-link">
+                                <span class="home__main__section__desktop__mnh-container-txt1">
+                                    Hombres
+                                </span>
+                                <span class="home__main__section__desktop__mnh-container-txt2">
+                                    Nueva colección
+                                </span>
+                            </a>
+
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+
+                <div class="home__main__special-offers">
+                    <div class="home__main__special-offers-button">
+                        <a href="/products/productsList">No te pierdas las ofertas especiales que tenemos en los
+                            calzados deportivos más conocidos que tenemos cada fin de semana!!!</a>
+                    </div>
+                </div>
+
+
+                <!-- <% categories.forEach(category=> { %>
+                    <h3 id="<%= category.brand %>" class="text-center text-uppercase fs-3 text-black mt-3">
+                        <%= category.brand.toUpperCase() %>
+                    </h3>
+                    <section class="home__main__section-cards">
+                        <div class="home__main__section__cards-container-desktop">
+                            <% category.products.forEach(product=> { %>
+                                <%- include('partials/productCardHome',{ ...product.dataValues, toThousand }) %>
+                                    <% }) %>
+                        </div>
+                    </section>
+                    <% }) %> -->
+
+                        <!-- ********************************** -->
+
+
+
+                        
+
+                            <div class="carrusel__swipper__products">
+                                <swiper-container
+                                    style="--swiper-navigation-color: #000000; --swiper-pagination-color: #000000"
+                                    class="mySwiper" thumbs-swiper=".mySwiper2" loop="true" space-between="10"
+                                    navigation="true">
+                                    <% categories.forEach(category=> { %>
+                                    <% category.products.forEach(product=> { %>
+                                        <swiper-slide>
+                                        <div class="brand__title_1">
+                                            <img class="brand__title__img"  src="/img/home-main/<%= category.image %>" alt="">
+                                        </div>
+                                        <div class="brand__title_2">
+                                            <img class="brand__title__etiqueta"  src="/img/home-main/etiqueta.png" alt="">
+                                        </div>
+                                        <div class="home__subtitulos__carousel">
+                                             <div class="sweet__box">
+                                                <div class="title-wrapper">
+                                                  <h1 class="sweet-title__model">
+                                                    <a class="sweet-title__model" href="/products/detail/<%= product.id %>">
+                                                        <span data-text="<%= product.model %>"><%= product.model %></span>
+                                                    </a>
+                                                  </h1>
+                                                  <h1 class="sweet-title__price">
+                                                    <span data-text="<%= product.price %>">$<%= product.price %></span>
+                                                  </h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                            <img src="/images/products/<%= product.image || 'image-default.png'%>"
+                                                alt="imagen de producto cualquiera">
+                                                
+                                        </swiper-slide>
+                                        <% }) %>
+                                        <% }) %>
+                                </swiper-container>
+
+                                <swiper-container class="mySwiper2 products__carrousel__box" loop="true" space-between="10" slides-per-view="10"
+                                    free-mode="true" watch-slides-progress="true">
+                                    <% categories.forEach(category=> { %>
+                                        <% category.products.forEach(product=> { %>
+                                            <swiper-slide>
+    
+                                                <img src="/images/products/<%= product.image || 'image-default.png'%>"
+                                                    alt="imagen de producto cualquiera">
+                                                    
+                                            </swiper-slide>
+                                            <% }) %>
+                                            <% }) %>
+                                </swiper-container>
+
+                            </div>
+                            
+
+                                <!-- ********************************** -->
+
+
+                                <div class="home__main__section__bottomBanner">
+                                    <div class="home__main__section__bottomBanner-box1">
+                                        <img src="/img/home-main/desktopBottom1.jpg" alt="">
+                                        <a href="#" class="home__main__section__bottomBanner-box1-container-link">
+                                            <span class="home__main__section__desktop__bottomBanner-container-txt">
+                                                zapatillas
+                                            </span>
+                                            <span class="home__main__section__desktop__bottomBanner-container-txt">
+                                                deportivas
+                                            </span>
+                                            <span class="home__main__section__desktop__bottomBanner-container-txt">
+                                                exclusivas
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="home__main__section__bottomBanner-box2">
+                                        <div class="home__main__section__bottomBanner-box2-img">
+                                            <img src="/img/home-main/desktopBottom2.jpg" alt="">
+                                        </div>
+                                        <div class="home__main__section__bottomBanner-box2-img">
+                                            <img src="/img/home-main/desktopBottom3.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="home__main__section__bottomBanner-box3">
+                                        <img src="/img/home-main/desktopBottom4.jpg" alt="">
+                                    </div>
+                                </div>
+
+
+            </section>
+            <!-- ******************* tablet section *********************** -->
+
+            <section class="home__main__section__tabletBanner">
+
+                <div class="home__main__section__tabletBanner-container">
+                    <div class="home__main__section__tabletBanner-container-box">
+                        <div class="home__main__section__tabletBanner-container-box-title">
+                            <h3 class="title-Banner">
+                                <span
+                                    class="home__main__section__tabletBanner-container-box-title-span-nike">Nike</span>
+                                <span class="home__main__section__tabletBanner-container-box-title-span-air">Air</span>
+                                <span class="home__main__section__tabletBanner-container-box-title-span-max">Max</span>
+                            </h3>
+
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse labore vitae consequatur
+                                accusamus.</p>
+                            <div class="buy-container">
+                                <div class="buy-container-violeta">
+                                    <a href="/products/productsList">Comprar ahora</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="home__main__section__tabletBanner-container-box-img">
+                            <div class="box-imgBig">
+                                <a href="/products/productsList">
+                                    <img src="/img/home-main/bannerTablet.png" alt="">
+                                </a>
+                            </div>
+                            <div class="home__main__section__tabletBanner-container-box-img-rigth">
+                                <div>
+                                    <a href="/products/productsList">
+                                        <img src="/img/home-main/imgRigth1.png" alt="">
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="/products/productsList">
+                                        <img src="/img/home-main/imgRigth1.png" alt="">
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="/products/productsList">
+                                        <img src="/img/home-main/imgRigth1.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+            <section class="mobile-Banners">
+                <section class="home__main-cajaBanner">
+                    <div class="home__main-cajaBanner2">
+                        <div class="home__main-cajaImg">
+                            <a href="/products/productsList">
+                                <img src="/img/home-main/banner-mobile.png" alt="">
+                            </a>
+                        </div>
+                        <div class="home__main-cajaTxt">
+                            <div class="home__main__cajaTxt-justdoit">
+                                <p>Just do it</p>
+                                <div class="home__main__cajaTxt-whitnike">
+                                    <span>whit </span><span class="nike">Nike</span>
+                                </div>
+                            </div>
+                            <div class="home__main__cajaTxt-explore">
+                                <a href="/products/productsList">Explorar ahora <i
+                                        class="fa-solid fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="home__main__seeMore">
+                    <div class="home__main__seeMore-title">
+                        <h2>Popular</h2>
+                    </div>
+                    <div class="home__main__seeMore-link">
+                        <a href="/products/productsList">ver más <i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                </div>
+                <section class="home__main-Popular">
+                    <div class="home__main-cajaPopular">
+                        <div class="home__main__popular-cajaImg">
+                            <a href="/products/productsList">
+                                <img src="/img/home-main/Popular.png" alt="">
+                            </a>
+                        </div>
+                        <div class="home__main__popular-cajaTxt">
+                            <div class="home__main__popular-cajaTxt-title">
+                                <p class="home__main__popular-cajaTxt-nike">Nike</p>
+                                <p class="home__main__popular-cajaTxt-model">Metcon X</p>
+                                <p class="home__main__popular-cajaTxt-price">$27.999</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
             <section class="home__main__section-cards">
 
-                <div class="home__main__angle-L">
-                    <i class="fa-regular fa-angle-left"></i>
-                </div>
 
+                <% categories.forEach(category=> { %>
+                    <h3 id="<%= category.brand %>" class="text-center text-uppercase fs-3 text-black mt-3 mobile-Banners">
+                        <%= category.brand.toUpperCase() %>
+                    </h3>
+                    <div class="home__main__section__cards-container">
+                        <% category.products.forEach(product=> { %>
+                            <%- include('partials/productCardHome',{ ...product.dataValues, toThousand }) %>
+                                <% }) %>
+                    </div>
+                    <% }) %>
 
-                <div class="home__main__section__cards-container-desktop">
-                    <article class="home__main__section__cards-product">
-                        <div class="home__main__section__cards-img">
-                            <a href="/productDetail">
-                                <img src="/img/home-main/product1.png" alt="">
-                            </a>
-                            <div class="home__main__section__card-product-heart">
-                                <i class="fa-regular fa-heart"></i>
-
-                            </div>
-                        </div>
-                        <div class="home__main__section__cards-text">
-                            <h5 class="home__main__section__cards-description">
-                                Adidas Yung-1
-                            </h5>
-                            <p class="home__main__section__cards-price">
-                                $32.000
-                            </p>
-                        </div>
-
-                    </article>
-                    <article class="home__main__section__cards-product">
-                        <div class="home__main__section__cards-img">
-                            <a href="/productDetail">
-                                <img src="/img/home-main/product2.png" alt="">
-                            </a>
-                            <div class="home__main__section__card-product-heart">
-                                <i class="fa-regular fa-heart"></i>
-
-                            </div>
-                        </div>
-                        <div class="home__main__section__cards-text">
-                            <h5 class="home__main__section__cards-description">
-                                Adidas Yung-1
-                            </h5>
-                            <p class="home__main__section__cards-price">
-                                $32.000
-                            </p>
-                        </div>
-                    </article>
-                    <article class="home__main__section__cards-product">
-                        <div class="home__main__section__cards-img">
-                            <a href="/productDetail">
-                                <img src="/img/home-main/product3.png" alt="">
-                            </a>
-                            <div class="home__main__section__card-product-heart">
-                                <i class="fa-regular fa-heart"></i>
-
-                            </div>
-                        </div>
-                        <div class="home__main__section__cards-text">
-                            <h5 class="home__main__section__cards-description">
-                                Adidas Yung-1
-                            </h5>
-                            <p class="home__main__section__cards-price">
-                                $32.000
-                            </p>
-                        </div>
-                    </article>
-                    <article class="home__main__section__cards-product">
-                        <div class="home__main__section__cards-img">
-                            <a href="/productDetail">
-                                <img src="/img/home-main/product4.png" alt="">
-                            </a>
-                            <div class="home__main__section__card-product-heart">
-                                <i class="fa-regular fa-heart"></i>
-
-                            </div>
-                        </div>
-                        <div class="home__main__section__cards-text">
-                            <h5 class="home__main__section__cards-description">
-                                Adidas Yung-1
-                            </h5>
-                            <p class="home__main__section__cards-price">
-                                $32.000
-                            </p>
-                        </div>
-                    </article>
-                </div>
-                <div class="home__main__angle-R">
-                    <i class="fa-solid fa-angle-right"></i>
-                </div>
 
             </section>
-            <div class="home__main__section__bottomBanner">
-                <div class="home__main__section__bottomBanner-box1">
-                    <img src="/img/home-main/desktopBottom1.jpg" alt="">
-                    <a href="#" class="home__main__section__bottomBanner-box1-container-link">
-                        <span class="home__main__section__desktop__bottomBanner-container-txt">
-                            zapatillas
-                        </span>
-                        <span class="home__main__section__desktop__bottomBanner-container-txt">
-                            deportivas
-                        </span>
-                        <span class="home__main__section__desktop__bottomBanner-container-txt">
-                            exclusivas
-                        </span>
-                    </a>
+
+            <section class="home__main__section__bottom">
+                <div class="home__main__section__bottom__box-img">
+
+                    <div class="home__main__add-title">
+                        <h2>Tambíen podría interesarte</h2>
+                    </div>
+
+                    <img src="/img/home-main/anuncio.png" alt="">
                 </div>
-                <div class="home__main__section__bottomBanner-box2">
-                    <div class="home__main__section__bottomBanner-box2-img">
-                        <img src="/img/home-main/desktopBottom2.jpg" alt="">
-                    </div>
-                    <div class="home__main__section__bottomBanner-box2-img">
-                        <img src="/img/home-main/desktopBottom3.jpg" alt="">
-                    </div>
-                </div>
-                <div class="home__main__section__bottomBanner-box3">
-                    <img src="/img/home-main/desktopBottom4.jpg" alt="">
-                </div>
-            </div>
-
-
-        </section>
-        <section class="home__main__section__tabletBanner">
-
-            <div class="home__main__section__tabletBanner-container">
-                <div class="home__main__section__tabletBanner-container-box">
-                    <div class="home__main__section__tabletBanner-container-box-title">
-                        <h3 class="title-Banner">
-                            <span class="home__main__section__tabletBanner-container-box-title-span-nike">Nike</span>
-                            <span class="home__main__section__tabletBanner-container-box-title-span-air">Air</span>
-                            <span class="home__main__section__tabletBanner-container-box-title-span-max">Max</span>
-                        </h3>
-
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse labore vitae consequatur
-                            accusamus.</p>
-                        <div class="buy-container">
-                            <div class="buy-container-violeta">
-                                <a href="/productDetail">Comprar ahora</a>
-                            </div>
+                <div class="home__main__section__bottom__box-register">
+                    <h3>Registrate acá para recibir las mejores ofertas</h3>
+                    <p>Sé el primero en conocer los lanzamientos y ofertas exclusivas</p>
+                    <div class="home__main__section__bottom__box-input">
+                        <div class="home__main__section__bottom__box-input-i">
+                            <i class="fa-solid fa-angle-right"></i>
                         </div>
+                        <input type="text" placeholder="   Ingresa tu email">
                     </div>
-                    <div class="home__main__section__tabletBanner-container-box-img">
-                        <div class="box-imgBig">
-                            <a href="/productDetail">
-                                <img src="/img/home-main/bannerTablet.png" alt="">
-                            </a>
-                        </div>
-                        <div class="home__main__section__tabletBanner-container-box-img-rigth">
-                            <div>
-                                <a href="/productDetail">
-                                    <img src="/img/home-main/imgRigth1.png" alt="">
-                                </a>
-                            </div>
-                            <div>
-                                <a href="/productDetail">
-                                    <img src="/img/home-main/imgRigth1.png" alt="">
-                                </a>
-                            </div>
-                            <div>
-                                <a href="/productDetail">
-                                    <img src="/img/home-main/imgRigth1.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-
-        </section>
-        <section class="mobile-Banners">
-            <section class="home__main-cajaBanner">
-                <div class="home__main-cajaBanner2">
-                    <div class="home__main-cajaImg">
-                        <a href="/productDetail">
-                            <img src="/img/home-main/banner-mobile.png" alt="">
-                        </a>
-                    </div>
-                    <div class="home__main-cajaTxt">
-                        <div class="home__main__cajaTxt-justdoit">
-                            <p>Just do it</p>
-                            <div class="home__main__cajaTxt-whitnike">
-                                <span>whit </span><span class="nike">Nike</span>
-                            </div>
-                        </div>
-                        <div class="home__main__cajaTxt-explore">
-                            <a href="/productDetail">Explorar ahora <i class="fa-solid fa-angle-right"></i></a>
-                        </div>
-                    </div>
                 </div>
             </section>
-            <div class="home__main__seeMore">
-                <div class="home__main__seeMore-title">
-                    <h2>Popular</h2>
-                </div>
-                <div class="home__main__seeMore-link">
-                    <a href="/productDetail">ver más <i class="fa-solid fa-angle-right"></i></a>
-                </div>
-            </div>
-            <section class="home__main-Popular">
-                <div class="home__main-cajaPopular">
-                    <div class="home__main__popular-cajaImg">
-                        <a href="/productDetail">
-                            <img src="/img/home-main/Popular.png" alt="">
-                        </a>
-                    </div>
-                    <div class="home__main__popular-cajaTxt">
-                        <div class="home__main__popular-cajaTxt-title">
-                            <p class="home__main__popular-cajaTxt-nike">Nike</p>
-                            <p class="home__main__popular-cajaTxt-model">Metcon X</p>
-                            <p class="home__main__popular-cajaTxt-price">$27.999</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </section>
+        </main>
 
-        <section class="home__main__section-cards">
-            <div class="home__main__section__cards-container">
-                <article class="home__main__section__cards-product">
-                    <div class="home__main__section__cards-img">
-                        <a href="/productDetail">
-                            <img src="/img/home-main/product1.png" alt="">
-                        </a>
-                        <div class="home__main__section__card-product-heart">
-                            <i class="fa-regular fa-heart"></i>
+        <%- include('partials/footer') %>
+           
+            <!-- AOS -->
+            <script>
+                AOS.init();
+            </script>
 
-                        </div>
-                    </div>
-                    <div class="home__main__section__cards-text">
-                        <h5 class="home__main__section__cards-description">
-                            Adidas Yung-1
-                        </h5>
-                        <p class="home__main__section__cards-price">
-                            $32.000
-                        </p>
-                    </div>
+            <!-- Swiper JS -->
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <!-- boostrap -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+            <script src="home.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-                </article>
-                <article class="home__main__section__cards-product">
-                    <div class="home__main__section__cards-img">
-                        <a href="/productDetail">
-                            <img src="/img/home-main/product2.png" alt="">
-                        </a>
-                        <div class="home__main__section__card-product-heart">
-                            <i class="fa-regular fa-heart"></i>
 
-                        </div>
-                    </div>
-                    <div class="home__main__section__cards-text">
-                        <h5 class="home__main__section__cards-description">
-                            Adidas Yung-1
-                        </h5>
-                        <p class="home__main__section__cards-price">
-                            $32.000
-                        </p>
-                    </div>
-                </article>
-                <article class="home__main__section__cards-product">
-                    <div class="home__main__section__cards-img">
-                        <a href="/productDetail">
-                            <img src="/img/home-main/product3.png" alt="">
-                        </a>
-                        <div class="home__main__section__card-product-heart">
-                            <i class="fa-regular fa-heart"></i>
 
-                        </div>
-                    </div>
-                    <div class="home__main__section__cards-text">
-                        <h5 class="home__main__section__cards-description">
-                            Adidas Yung-1
-                        </h5>
-                        <p class="home__main__section__cards-price">
-                            $32.000
-                        </p>
-                    </div>
-                </article>
-                <article class="home__main__section__cards-product">
-                    <div class="home__main__section__cards-img">
-                        <a href="/productDetail">
-                            <img src="/img/home-main/product4.png" alt="">
-                        </a>
-                        <div class="home__main__section__card-product-heart">
-                            <i class="fa-regular fa-heart"></i>
 
-                        </div>
-                    </div>
-                    <div class="home__main__section__cards-text">
-                        <h5 class="home__main__section__cards-description">
-                            Adidas Yung-1
-                        </h5>
-                        <p class="home__main__section__cards-price">
-                            $32.000
-                        </p>
-                    </div>
-                </article>
-                <article class="home__main__section__cards-product tablet1">
-                    <div class="home__main__section__cards-img">
-                        <a href="/productDetail">
-                            <img src="/img/home-main/product1.png" alt="">
-                        </a>
-                        <div class="home__main__section__card-product-heart">
-                            <i class="fa-regular fa-heart"></i>
-
-                        </div>
-                    </div>
-                    <div class="home__main__section__cards-text">
-                        <h5 class="home__main__section__cards-description">
-                            Adidas Yung-1
-                        </h5>
-                        <p class="home__main__section__cards-price">
-                            $32.000
-                        </p>
-                    </div>
-                </article>
-                <article class="home__main__section__cards-product tablet1">
-                    <div class="home__main__section__cards-img">
-                        <a href="/productDetail">
-                            <img src="/img/home-main/product2.png" alt="">
-                        </a>
-                        <div class="home__main__section__card-product-heart">
-                            <i class="fa-regular fa-heart"></i>
-
-                        </div>
-                    </div>
-                    <div class="home__main__section__cards-text">
-                        <h5 class="home__main__section__cards-description">
-                            Adidas Yung-1
-                        </h5>
-                        <p class="home__main__section__cards-price">
-                            $32.000
-                        </p>
-                    </div>
-                </article>
-                <article class="home__main__section__cards-product tablet1">
-                    <div class="home__main__section__cards-img">
-                        <a href="/productDetail">
-                            <img src="/img/home-main/product3.png" alt="">
-                        </a>
-                        <div class="home__main__section__card-product-heart">
-                            <i class="fa-regular fa-heart"></i>
-
-                        </div>
-                    </div>
-                    <div class="home__main__section__cards-text">
-                        <h5 class="home__main__section__cards-description">
-                            Adidas Yung-1
-                        </h5>
-                        <p class="home__main__section__cards-price">
-                            $32.000
-                        </p>
-                    </div>
-                </article>
-                <article class="home__main__section__cards-product tablet1">
-                    <div class="home__main__section__cards-img">
-                        <a href="/productDetail">
-                            <img src="/img/home-main/product4.png" alt="">
-                        </a>
-                        <div class="home__main__section__card-product-heart">
-                            <i class="fa-regular fa-heart"></i>
-
-                        </div>
-                    </div>
-                    <div class="home__main__section__cards-text">
-                        <h5 class="home__main__section__cards-description">
-                            Adidas Yung-1
-                        </h5>
-                        <p class="home__main__section__cards-price">
-                            $32.000
-                        </p>
-                    </div>
-                </article>
-                <article class="home__main__section__cards-product tablet1">
-                    <div class="home__main__section__cards-img">
-                        <a href="/productDetail">
-                            <img src="/img/home-main/product1.png" alt="">
-                        </a>
-                        <div class="home__main__section__card-product-heart">
-                            <i class="fa-regular fa-heart"></i>
-
-                        </div>
-                    </div>
-                    <div class="home__main__section__cards-text">
-                        <h5 class="home__main__section__cards-description">
-                            Adidas Yung-1
-                        </h5>
-                        <p class="home__main__section__cards-price">
-                            $32.000
-                        </p>
-                    </div>
-                </article>
-                <article class="home__main__section__cards-product tablet2">
-                    <div class="home__main__section__cards-img">
-                        <a href="/productDetail">
-                            <img src="/img/home-main/product2.png" alt="">
-                        </a>
-                        <div class="home__main__section__card-product-heart">
-                            <i class="fa-regular fa-heart"></i>
-
-                        </div>
-                    </div>
-                    <div class="home__main__section__cards-text">
-                        <h5 class="home__main__section__cards-description">
-                            Adidas Yung-1
-                        </h5>
-                        <p class="home__main__section__cards-price">
-                            $32.000
-                        </p>
-                    </div>
-                </article>
-                <article class="home__main__section__cards-product tablet2">
-                    <div class="home__main__section__cards-img">
-                        <a href="/productDetail">
-                            <img src="/img/home-main/product3.png" alt="">
-                        </a>
-                        <div class="home__main__section__card-product-heart">
-                            <i class="fa-regular fa-heart"></i>
-
-                        </div>
-                    </div>
-                    <div class="home__main__section__cards-text">
-                        <h5 class="home__main__section__cards-description">
-                            Adidas Yung-1
-                        </h5>
-                        <p class="home__main__section__cards-price">
-                            $32.000
-                        </p>
-                    </div>
-                </article>
-                <article class="home__main__section__cards-product tablet2">
-                    <div class="home__main__section__cards-img">
-                        <a href="/productDetail">
-                            <img src="/img/home-main/product4.png" alt="">
-                        </a>
-                        <div class="home__main__section__card-product-heart">
-                            <i class="fa-regular fa-heart"></i>
-
-                        </div>
-                    </div>
-                    <div class="home__main__section__cards-text">
-                        <h5 class="home__main__section__cards-description">
-                            Adidas Yung-1
-                        </h5>
-                        <p class="home__main__section__cards-price">
-                            $32.000
-                        </p>
-                    </div>
-                </article>
-            </div>
-
-        </section>
-
-        <section class="home__main__section__bottom">
-            <div class="home__main__section__bottom__box-img">
-
-                <div class="home__main__add-title">
-                    <h2>Tambíen podría interesarte</h2>
-                </div>
-
-                <img src="/img/home-main/anuncio.png" alt="">
-            </div>
-            <div class="home__main__section__bottom__box-register">
-                <h3>Regstrate acá para recibir las mejores ofertas</h3>
-                <p>Sé el primero en conocer los lanzamientos y ofertas exclusivas</p>
-                <div class="home__main__section__bottom__box-input">
-                    <div class="home__main__section__bottom__box-input-i">
-                        <i class="fa-solid fa-angle-right"></i>
-                    </div>
-                    <input type="text" placeholder="   Ingresa tu email">
-                </div>
-
-            </div>
-        </section>
-    </main>
-    
-    <%- include('partials/footer') %>
-    
-    <!-- AOS -->
-    <script>
-        AOS.init();
-    </script>
-    <!-- boostrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-
-</body>
+    </body>
 
 </html>

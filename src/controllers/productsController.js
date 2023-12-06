@@ -1,82 +1,235 @@
+const db = require("../database/models");
+const moment = require("moment");
+const {validationResult} = require('express-validator')
+
 const { readJSON, writeJSON } = require("../data");
+const { existsSync, unlinkSync } = require('fs');
+const deleteImage = require("../../utils/deleteImage");
 
 let products = readJSON("./products.json");
 
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+
 module.exports = {
+
+  list: (req, res) => {
+
+    const productsList = db.Product.findAll({
+      include: ['category'],
+      order: ['model'],
+    })
+    const categories = db.Category.findAll();
+
+    Promise.all([productsList, categories])
+      .then(([productsList, categories]) => {
+        res.render("productsList", {
+          productsList,
+          categories,
+          toThousand
+        });
+      })
+
+  },
   cart: (req, res) => {
     return res.render("productCart");
   },
   detail: (req, res) => {
-    const products = readJSON("products.json");
-    const product = products.find((product) => product.id === req.params.id);
-    return res.render("productDetail", {
-      ...product,
-    });
+
+    db.Product.findByPk(req.params.id, {
+      include: ['category']
+    })
+      .then(product => {
+        return res.render('productDetail', {
+          ...product?.dataValues
+        })
+      })
+      .catch(error => console.log(error))
+
   },
   addProduct: (req, res) => {
     return res.render("addProduct");
   },
   editProduct: (req, res) => {
-    const products = readJSON("products.json");
-    const id = req.params.id;
+    const id = req.params.id
 
-    const product = products.find((product) => product.id === id);
-
-    return res.render("editProduct", {
-      ...product,
-    });
-  },
-  product: (req, res) => {
-    return res.render("product");
-  },
-  updateProduct: (req, res) => {
-    const {  name, price, gender, description, size } = req.body;
-    const products = readJSON("products.json");
-
-    const productsModify = products.map((product) => {
-      if (product.id === req.params.id) {
-        product.name = name.trim()
-        product.description = description.trim()
-        product.image = req.file ? req.file.filename : null
-        product.category = gender
-        product.colors = null
-        product.price = +price
-        product.tallas = size
+    const product = db.Product.findByPk(id, {
+      include: {
+        all: true
       }
+    })
 
-      return product;
-    });
+    const categories = db.Category.findAll()
 
-    writeJSON(productsModify, "products.json");
+    Promise.all([product, categories])
+      .then(([product, categories]) => {
+        return res.render('editProduct', {
+          categories,
+          ...product?.dataValues
+        })
+      })
+      .catch(error => console.log(error))
 
-    return res.redirect("/admin");
+  },
+  update: (req, res) => {
+  
+    const errors = validationResult(req)
+  
+    if (errors.isEmpty()) {
+    
+    const id = req.params.id;
+    const { name, price, brand, description } = req.body;
+    
+      db.Product.findByPk(id)
+      .then((product) => {
+        const previousImage = product.image; 
+        const newImage = req.file ? req.file.filename : previousImage;
+
+        return db.Product.update(
+          {
+          
+            model: name,
+            price,
+            category_id: brand,
+            image: newImage,
+            description: description.trim(),
+          
+            createdAt: new Date(),
+            updatedAt: new Date(),
+            
+          },
+          {
+            where: {
+              id: id,
+            },
+          }
+        )
+        .then(() => {
+          if (previousImage !== newImage && previousImage !== '') {
+            deleteImage(previousImage);
+          }
+          return res.redirect("/admin");
+        })
+        .catch((error) => {
+          console.log(error);
+          return res.status(500).send("Error en la actualización");
+        });
+      });
+    
+    } else {
+
+      const id = req.params.id
+
+      const product = db.Product.findByPk(id, {
+        include: {
+          all: true
+        }
+      })
+  
+      const categories = db.Category.findAll()
+  
+      Promise.all([product, categories])
+        .then(([product, categories]) => {
+          return res.render('editProduct', {
+            categories,
+            ...product?.dataValues,
+            errors: errors.mapped(),
+            old: req.body
+          })
+        })
+        .catch(error => console.log(error))
+  
+    }  
   },
   store: (req, res) => {
+    const errors = validationResult(req);
+
+    req.fileValidatorError && errors.errors.push({
+      type : 'field',
+      value : "",
+      path : 'image',
+      msg: req.fileValidatorError.image,
+      location : "body"
+  });
+
+    if(!req.file){
+      errors.errors.push({
+        type : 'field',
+        value : "",
+        path : 'image',
+        msg: "Se precisa una imágen",
+        location : "body"
+    });
+    }
+
+
+
+
+  return res.send(errors.mapped())
+
     const { name, price, gender, description, size } = req.body;
 
-    let newProduct = {
-      id: products[products.length - 1].id + 1,
-      name: name.trim(),
-      description: description.trim(),
-      image: req.file ? req.file.filename : null,
-      category: gender,
-      colors: null,
-      price: +price,
-      tallas: size,
+    if (errors.isEmpty()) {
+    let category = null;
+
+    if (gender == "Adidas") {
+      category = 2;
+    }
+    if (gender == "Puma") {
+      category = 3;
+    }
+    if (gender == "Nike") {
+      category = 1;
+    }
+    if (gender == "Reebok") {
+      category = 4;
+    }
+
+    const newProduct = {
+      model: name,
+      description: description,
+      image: req.file.filename,
+      price,
+      category_id: category,
+      createdAt: new Date(),
+      updatedAt: new Date(),
     };
 
-    products.push(newProduct);
-
-    writeJSON(products, "./products.json");
-    return res.redirect("/");
+    db.Product.create(newProduct)
+      .then((product) => {
+        console.log("Product created", product);
+        return res.redirect("/admin");
+      })
+      .catch((error) => {
+        console.error("Error creating product", error);
+        return res.status(500).send("Error al crear el producto");
+      });
+    } else {
+      return res.render("addProduct", {
+      errors: errors.mapped(),
+      old: req.body
+    });
+    }
   },
-  removeProduct : (req, res) => {
-    const products = readJSON('products.json');
+  remove: (req, res) => {
 
-    const productsModify = products.filter(product => product.id !== req.params.id)
+    const productId = req.params.id;
 
-    writeJSON(productsModify, 'products.json');
+    db.Product.findByPk(productId)
+      .then((product) => {
+        deleteImage(product.image)
+      })
 
-    return res.redirect('/admin')
+    db.Product.destroy({
+      where: { id: productId }
+    })
+      .then(() => {
+        console.log('Producto eliminado exitosamente');
+        res.redirect('/admin');
+      })
+      .catch((error) => {
+        console.error('Error al eliminar el producto:', error);
+        res.status(500).send('Error al eliminar el producto');
+      });
   }
 };
